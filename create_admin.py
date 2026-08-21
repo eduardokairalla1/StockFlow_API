@@ -31,7 +31,7 @@ with app.app_context():
         # Add the user to the database and commit the transaction
         db.session.add(admin_user)
         db.session.commit()
-        print(f"[✔] Admin user '{email}' created.")
+        print(f"[OK] Admin user '{email}' created.")
     else:
         # Inform that the user already exists
         print(f"[i] Admin user '{email}' already exists.")

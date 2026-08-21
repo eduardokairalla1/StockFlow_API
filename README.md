@@ -21,7 +21,7 @@ The system offers:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer              | Technology                                |
 |--------------------|--------------------------------------------|
@@ -41,7 +41,7 @@ The system offers:
 
 ---
 
-## 🔐 How does blockchain protection work?
+## How does blockchain protection work?
 
 Each inventory movement generates:
 1. A **SHA-256 hash** with the transaction data
@@ -55,7 +55,7 @@ With this, it is possible to:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 StockFlow_API/
@@ -83,7 +83,7 @@ StockFlow_API/
 
 ---
 
-## 🌱 Environment Variables
+## Environment Variables
 
 This project uses environment variables to configure the database connection, API security, and the path to save .ots proof files.
 
@@ -91,7 +91,7 @@ A template .env.example file is included in the repository to make initial setup
 
 ---
 
-## ⚙️ Manual Setup (without Docker)
+## Manual Setup (without Docker)
 > Follow the steps below to run the StockFlow_API application in your local environment:
 
 ### 1. Clone the repository
@@ -132,7 +132,7 @@ uv run flask run
 ```
 > The API will be available at: http://localhost:5001
 
-## 🐳 Running with Docker
+## Running with Docker
 > The project includes a complete Docker environment for quick and reproducible setup. This includes the Flask API and a PostgreSQL container with volume persistence.
 
 ### 1. Create a `.env` file from the example
@@ -152,7 +152,7 @@ ADMIN_PASSWORD=admin123
 ```env
 docker compose up --build
 ```
-### 4. Finished! 👏 
+### 4. Finished!
 > The API will be available at: http://localhost:5001
 
 ### Stopping and cleaning Docker!
@@ -167,18 +167,18 @@ docker compose down -v
 ```
 ---
 
-## 🔑 Initial Access and Creation of the First User
+## Initial Access and Creation of the First User
 
 For **security** reasons, the system **does not have a public user registration endpoint**.  
 The creation of new users must be done **exclusively by authenticated administrators**.
 
-### 👤 How to create the first user?
+### How to create the first user?
 
 Since there is no pre-registered administrator, the first user **must be inserted manually into the database** via SQL.
 
 To do this, generate an encrypted `password_hash` using the script included in the project:
 
-#### 📄 Script: `generate_password.py`
+#### Script: `generate_password.py`
 
 ```bash
 uv run python generate_password.py
@@ -198,14 +198,14 @@ VALUES (
 );
 ```
 
-### 🔐 User flow security
-- 🔒 There is no public registration (signup) available in the API
+### User flow security
+- There is no public registration (signup) available in the API
 
-- 👤 Only authenticated administrators can register, edit, and remove users
+- Only authenticated administrators can register, edit, and remove users
 
-- 🧩 This ensures complete control over access and prevents the creation of unauthorized accounts
+- This ensures complete control over access and prevents the creation of unauthorized accounts
 
-### 📌 After manually registering the first admin, you will be able to:
+### After manually registering the first admin, you will be able to:
 
 - Log in using the /api/login endpoint
 
@@ -215,23 +215,23 @@ VALUES (
 
 ---
 
-## 🧪 Postman
+## Postman
 
 You can test all API endpoints directly with the resources below:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/edu3983/stockflow-api/overview)   
 Access the complete collection directly in Postman Web
 
-📘 [Postman Documentation](https://documenter.getpostman.com/view/29521779/2sB2qWJ557)  
+[Postman Documentation](https://documenter.getpostman.com/view/29521779/2sB2qWJ557)  
 View examples, schemas, and detailed descriptions of the endpoints
 
-🔐 After login, the JWT token is automatically saved as the `token` variable and used in all authenticated requests.
+After login, the JWT token is automatically saved as the `token` variable and used in all authenticated requests.
 
 ---
 
-## 📖 API Reference
+## API Reference
 
-### 🔐 Authentication
+### Authentication
 
 | Method | Route        | Description                          | Permission |
 |--------|--------------|--------------------------------------|------------|
@@ -239,7 +239,7 @@ View examples, schemas, and detailed descriptions of the endpoints
 
 ---
 
-### 👤 Users
+### Users
 
 | Method | Route               | Description                       | Permission |
 |--------|--------------------|-----------------------------------|------------|
@@ -251,7 +251,7 @@ View examples, schemas, and detailed descriptions of the endpoints
 
 ---
 
-### 📦 Products
+### Products
 
 | Method | Route                  | Description                      | Permission |
 |--------|-----------------------|----------------------------------|------------|
@@ -263,7 +263,7 @@ View examples, schemas, and detailed descriptions of the endpoints
 
 ---
 
-### 🔄 Transactions (Inventory)
+### Transactions (Inventory)
 
 | Method | Route                                | Description                                         | Permission |
 |--------|-------------------------------------|-----------------------------------------------------|------------|
@@ -277,7 +277,7 @@ View examples, schemas, and detailed descriptions of the endpoints
 
 ---
 
-### 🔐 Blockchain & Proof of Integrity
+### Blockchain & Proof of Integrity
 
 | Method | Route                              | Description                                               | Permission |
 |--------|-----------------------------------|-----------------------------------------------------------|------------|
@@ -287,7 +287,7 @@ View examples, schemas, and detailed descriptions of the endpoints
 
 ---
 
-## 🤝 Contribution
+## Contribution
 
 1. Create a branch (`feature/feature-name`)
 2. Clear and objective commits (`feat: description`, `fix: description`)
@@ -296,9 +296,9 @@ View examples, schemas, and detailed descriptions of the endpoints
 
 ---
 
-## 👥 Author(s)
+## Author(s)
 
 - [Eduardo Kairalla](https://github.com/eduzin3983)
 - Contributors are welcome!
 
-<h3 align="center"><sub>Made with 💻 and ☕</sub></p>
+<h3 align="center"><sub>Made with code and coffee</sub></p>
