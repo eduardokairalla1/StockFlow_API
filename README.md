@@ -6,6 +6,7 @@
 ![Flask](https://img.shields.io/badge/Flask-API-lightgrey)
 ![Blockchain](https://img.shields.io/badge/Blockchain-OTS%20%2B%20Bitcoin-orange)
 [![Postman](https://img.shields.io/badge/Docs-Postman-orange)](https://documenter.getpostman.com/view/29521779/2sB2qWJ557)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ## Description
 
@@ -74,6 +75,7 @@ StockFlow_API/
 ├── .env                       # Environment variables (private)
 ├── .env.example               # Configuration example
 ├── .gitignore                 # Files ignored by Git
+├── LICENSE                    # MIT license
 ├── app.py                     # Flask application initialization
 ├── config.py                  # General project configurations
 ├── pyproject.toml             # Project metadata and dependencies (uv)
@@ -301,5 +303,11 @@ After login, the JWT token is automatically saved as the `token` variable and us
 
 - [Eduardo Kairalla](https://github.com/eduzin3983)
 - Contributors are welcome!
+
+---
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for the full text.
 
 <h3 align="center"><sub>Made with code and coffee</sub></p>
