@@ -130,7 +130,7 @@ uv run flask db upgrade
 ```bash
 uv run flask run
 ```
-> The API will be available at: http://localhost:5000
+> The API will be available at: http://localhost:5001
 
 ## 🐳 Running with Docker
 > The project includes a complete Docker environment for quick and reproducible setup. This includes the Flask API and a PostgreSQL container with volume persistence.
@@ -153,7 +153,7 @@ ADMIN_PASSWORD=admin123
 docker compose up --build
 ```
 ### 4. Finished! 👏 
-> The API will be available at: http://localhost:5000
+> The API will be available at: http://localhost:5001
 
 ### Stopping and cleaning Docker!
 ```bash

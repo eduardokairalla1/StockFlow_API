@@ -5,13 +5,13 @@ services:
     env_file:
       - .env
     ports:
-      - "5000:5000"
+      - "5001:5001"
     volumes:
       - .:/app
     depends_on:
       db:
         condition: service_healthy
-    command: bash -c "flask db upgrade && python create_admin.py && flask run --host=0.0.0.0"
+    command: bash -c "flask db upgrade && python create_admin.py && flask run --host=0.0.0.0 --port=5001"
 
   db:
     image: postgres:15

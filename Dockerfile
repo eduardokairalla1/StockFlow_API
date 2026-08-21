@@ -20,6 +20,6 @@ RUN uv sync --locked --no-dev
 # Copy the rest of the application
 COPY . .
 
-EXPOSE 5000
+EXPOSE 5001
 
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5001"]
