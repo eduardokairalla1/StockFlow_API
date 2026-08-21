@@ -1,4 +1,8 @@
-# StockFlow API
+<p align="center">
+  <img src="assets/stockflow-banner.png"
+       alt="StockFlow API — Hash every movement. Timestamp every hash. Anchor it in Bitcoin."
+       width="100%">
+</p>
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue)
 ![uv](https://img.shields.io/badge/deps-uv-purple)
