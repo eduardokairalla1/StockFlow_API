@@ -69,6 +69,7 @@ StockFlow_API/
 │   └── infraDB/               # ORM models and database connection
 │
 ├── migrations/                # Database version control (Alembic)
+├── scripts/                   # Standalone maintenance scripts (admin bootstrap, hashing)
 ├── ots_data/                  # Folder and .ots files generated dynamically at runtime
 ├── .env                       # Environment variables (private)
 ├── .env.example               # Configuration example
@@ -181,7 +182,7 @@ To do this, generate an encrypted `password_hash` using the script included in t
 #### Script: `generate_password.py`
 
 ```bash
-uv run python generate_password.py
+uv run python -m scripts.generate_password
 ```
 > Enter the desired password (e.g.: admin123) and copy the generated hash.
 
