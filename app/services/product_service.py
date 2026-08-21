@@ -43,8 +43,8 @@ def create_product(data):
         raise ValueError("A product with this name already exists.")
 
     # Delegate insertion to repository
-    produto = repo.insert_product(data)
-    return produto
+    product = repo.insert_product(data)
+    return product
 
 
 def get_all_products(name=None, code=None):

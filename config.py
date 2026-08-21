@@ -52,6 +52,6 @@ def _require_secret_key():
 
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", "postgresql+psycopg2://seu_user:suasenha@localhost/seu_banco")
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", "postgresql+psycopg2://your_user:your_password@localhost/your_database")
     SECRET_KEY = _require_secret_key()
     SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -34,10 +34,10 @@ def create_product_controller(data):
         data = ProductSchema().load(data)
 
         # Create product via service layer
-        produto = create_product(data)
+        product = create_product(data)
 
         # Format the created product and return with 201 status
-        return jsonify(format_product(produto)), 201
+        return jsonify(format_product(product)), 201
 
     except ValidationError as ve:
         # Return detailed validation errors with 400 status

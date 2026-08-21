@@ -10,13 +10,13 @@ from app.infraDB.repositories.users_repository import UsersRepository
 from app.services.jwt_service import generate_jwt
 
 
-def authenticate_user(email: str, senha: str):
+def authenticate_user(email: str, password: str):
     """
     Verify user credentials and generate a JWT on success.
 
     Args:
         email (str): Email address provided by the user.
-        senha (str): Plaintext password provided by the user.
+        password (str): Plaintext password provided by the user.
 
     Returns:
         tuple(str, Users) or None:
@@ -29,7 +29,7 @@ def authenticate_user(email: str, senha: str):
     user = repo.select_user_by_email(email=email)
 
     # Verify user exists and password matches stored hash
-    if not user or not bcrypt.checkpw(senha.encode(), user.password_hash.encode()):
+    if not user or not bcrypt.checkpw(password.encode(), user.password_hash.encode()):
         # Authentication failed: invalid email or password
         return None
 
