@@ -1,6 +1,7 @@
 # StockFlow API
 
-![Python](https://img.shields.io/badge/Python-3.12-blue)
+![Python](https://img.shields.io/badge/Python-3.14-blue)
+![uv](https://img.shields.io/badge/deps-uv-purple)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-DB-lightblue)
 ![Flask](https://img.shields.io/badge/Flask-API-lightgrey)
 ![Blockchain](https://img.shields.io/badge/Blockchain-OTS%20%2B%20Bitcoin-orange)
@@ -24,7 +25,7 @@ The system offers:
 
 | Layer              | Technology                                |
 |--------------------|--------------------------------------------|
-| **Language**       | Python 3.12.3                              |
+| **Language**       | Python 3.14                                |
 | **Framework**      | Flask                                      |
 | **Database**       | PostgreSQL                                 |
 | **ORM**            | SQLAlchemy + Flask-SQLAlchemy              |
@@ -35,6 +36,7 @@ The system offers:
 | **Authentication** | JWT (`PyJWT`) with encrypted password (`bcrypt`) |
 | **Serialization**  | Marshmallow                                |
 | **Env Management** | python-dotenv                              |
+| **Dependencies**   | uv (`pyproject.toml` + `uv.lock`)          |
 | **Containerization**| Docker + Docker Compose                   |
 
 ---
@@ -73,8 +75,10 @@ StockFlow_API/
 ├── .gitignore                 # Files ignored by Git
 ├── app.py                     # Flask application initialization
 ├── config.py                  # General project configurations
-├── README.md                  # Main documentation
-└── requirements.txt           # List of Python dependencies
+├── pyproject.toml             # Project metadata and dependencies (uv)
+├── uv.lock                    # Fully pinned dependency lockfile
+├── .python-version            # Python version used by uv
+└── README.md                  # Main documentation
 ```
 
 ---
@@ -98,33 +102,33 @@ git clone https://github.com/eduzin3983/StockFlow_API.git
 cd StockFlow_API/
 ```
 
-### 2. Create and activate a virtual environment
+### 2. Install uv
+> Skip this step if you already have [uv](https://docs.astral.sh/uv/) installed.
 ```bash
-python -m venv .venv
+curl -LsSf https://astral.sh/uv/install.sh | sh   # On Linux/Mac
 ```
-```bash
-source venv/bin/activate  # On Linux/Mac
-```
-```bash
-venv\Scripts\activate   # On Windows
+```powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"   # On Windows
 ```
 
 ### 3. Install dependencies
+> `uv sync` creates the `.venv`, installs the exact versions from `uv.lock`, and downloads Python 3.14 if needed.
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 ### 4. Configure environment variables
 > Copy the example file and edit it according to your environment.
 
 ### 5. Initialize the database
+> `uv run` executes the command inside the project environment, so there is no venv to activate.
 ```bash
-flask db upgrade
+uv run flask db upgrade
 ```
 
 ### 6. Run the application
 ```bash
-flask run
+uv run flask run
 ```
 > The API will be available at: http://localhost:5000
 
@@ -177,7 +181,7 @@ To do this, generate an encrypted `password_hash` using the script included in t
 #### 📄 Script: `generate_password.py`
 
 ```bash
-python3 generate_password.py
+uv run python generate_password.py
 ```
 > Enter the desired password (e.g.: admin123) and copy the generated hash.
 
